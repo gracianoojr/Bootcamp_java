@@ -5,11 +5,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-
-        String nome = "";
-        String email = "";
-        String numero = "";
-
+        UsuarioService service = new UsuarioService();
         int opcao;
 
         do {
@@ -27,50 +23,37 @@ public class Main {
             switch (opcao) {
 
                 case 1:
-                    System.out.println("Qual é o nome do usuario?");
-                    nome = scanner.nextLine();
+                    System.out.println("Nome:");
+                    String nome = scanner.nextLine();
 
-                    System.out.println("Qual é o email do usuario?");
-                    email = scanner.nextLine();
+                    System.out.println("Email:");
+                    String email = scanner.nextLine();
 
-                    System.out.println("Qual é o numero do usuario?");
-                    numero = scanner.nextLine();
+                    System.out.println("Numero:");
+                    String numero = scanner.nextLine();
 
-                    System.out.println("Usuário cadastrado com sucesso!");
+                    service.cadastrar(nome, email, numero);
                     break;
 
                 case 2:
-                    if (nome.isEmpty()) {
-                        System.out.println("Nenhum usuário cadastrado.");
-                    } else {
-                        System.out.println("Nome: " + nome);
-                        System.out.println("Email: " + email);
-                        System.out.println("Numero: " + numero);
-                    }
+                    service.consultar();
                     break;
 
                 case 3:
-                    if (nome.isEmpty()) {
-                        System.out.println("Nenhum usuário para atualizar.");
-                    } else {
-                        System.out.println("Novo nome:");
-                        nome = scanner.nextLine();
+                    System.out.println("Novo nome:");
+                    nome = scanner.nextLine();
 
-                        System.out.println("Novo email:");
-                        email = scanner.nextLine();
+                    System.out.println("Novo email:");
+                    email = scanner.nextLine();
 
-                        System.out.println("Novo numero:");
-                        numero = scanner.nextLine();
+                    System.out.println("Novo numero:");
+                    numero = scanner.nextLine();
 
-                        System.out.println("Usuário atualizado!");
-                    }
+                    service.atualizar(nome, email, numero);
                     break;
 
                 case 4:
-                    nome = "";
-                    email = "";
-                    numero = "";
-                    System.out.println("Usuário deletado!");
+                    service.deletar();
                     break;
 
                 case 0:
