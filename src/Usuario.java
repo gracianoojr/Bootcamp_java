@@ -1,38 +1,31 @@
 public class Usuario {
+    String nome;
+    String email;
+    String numero;
+    String senha;
 
-    private String nome;
-    private String email;
-    private String numero;
-
-    public Usuario(String nome, String email, String numero) {
+    public Usuario(String nome, String email, String numero, String senha) {
         this.nome = nome;
         this.email = email;
         this.numero = numero;
+        this.senha = senha;
     }
 
-    public String getNome() {
-        return nome;
-    }
+    public String getNome() {return nome;}
 
-    public String getEmail() {
-        return email;
-    }
+    public String getSenha() {return senha;}
 
-    public String getNumero() {
-        return numero;
-    }
+    public String getEmail() {return email;}
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+    public String getNumero() {return numero;}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+    public void setNome(String nome) {this.nome = nome;}
 
-    public void setNumero(String numero) {
-        this.numero = numero;
-    }
+    public void setSenha(String senha) {this.senha = senha;}
+
+    public void setEmail(String email) {this.email = email;}
+
+    public void setNumero(String numero) {this.numero = numero;}
 
     public void exibir() {
         System.out.println("Nome: " + nome);

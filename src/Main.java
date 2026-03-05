@@ -32,7 +32,10 @@ public class Main {
                     System.out.println("Numero:");
                     String numero = scanner.nextLine();
 
-                    service.cadastrar(nome, email, numero);
+                    System.out.println("Senha:");
+                    String senha = scanner.nextLine();
+
+                    service.cadastrar(nome, email, numero, senha);
                     break;
 
                 case 2:
@@ -40,20 +43,31 @@ public class Main {
                     break;
 
                 case 3:
+                    System.out.println("Digite o ID do usuário:");
+                    int idAtualizar = scanner.nextInt();
+                    scanner.nextLine();
+
                     System.out.println("Novo nome:");
-                    nome = scanner.nextLine();
+                    String nomeAtualizado = scanner.nextLine();
 
                     System.out.println("Novo email:");
-                    email = scanner.nextLine();
+                    String emailAtualizado = scanner.nextLine();
 
                     System.out.println("Novo numero:");
-                    numero = scanner.nextLine();
+                    String numeroAtualizado = scanner.nextLine();
 
-                    service.atualizar(nome, email, numero);
+                    System.out.println("Nova senha:");
+                    String novaSenha = scanner.nextLine();
+
+                    service.atualizar(idAtualizar, nomeAtualizado, emailAtualizado, numeroAtualizado, novaSenha);
                     break;
 
                 case 4:
-                    service.deletar();
+                    System.out.println("Digite o ID do usuário:");
+                    int idDeletar = scanner.nextInt();
+                    scanner.nextLine();
+
+                    service.deletar(idDeletar);
                     break;
 
                 case 0:
