@@ -1,7 +1,9 @@
 package app.controller;
 
-import app.model.Usuario;
+import app.dto.UsuarioRequestDTO;
+import app.dto.UsuarioResponseDTO;
 import app.service.UsuarioService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,23 +19,23 @@ public class UsuarioController {
     }
 
     @PostMapping
-    public Usuario cadastrar(@RequestBody Usuario usuario) {
-        return service.cadastrar(usuario);
+    public UsuarioResponseDTO cadastrar(@RequestBody @Valid UsuarioRequestDTO dto) {
+        return service.cadastrar(dto);
     }
 
     @GetMapping
-    public List<Usuario> listar() {
+    public List<UsuarioResponseDTO> listar() {
         return service.listar();
     }
 
     @GetMapping("/{id}")
-    public Usuario buscarPorId(@PathVariable Long id) {
+    public UsuarioResponseDTO buscarPorId(@PathVariable Long id) {
         return service.buscarPorId(id);
     }
 
     @PutMapping("/{id}")
-    public Usuario atualizar(@PathVariable Long id, @RequestBody Usuario usuario) {
-        return service.atualizar(id, usuario);
+    public UsuarioResponseDTO atualizar(@PathVariable Long id, @RequestBody @Valid UsuarioRequestDTO dto) {
+        return service.atualizar(id, dto);
     }
 
     @DeleteMapping("/{id}")
