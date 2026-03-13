@@ -18,7 +18,8 @@ public class UsuarioRequestDTO {
     @NotBlank(message = "Senha é obrigatória")
     private String senha;
 
-    public UsuarioRequestDTO() {}
+    public UsuarioRequestDTO() {
+    }
 
     public UsuarioRequestDTO(String nome, String email, String numero, String senha) {
         this.nome = nome;

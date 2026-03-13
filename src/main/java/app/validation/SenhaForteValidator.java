@@ -1,0 +1,37 @@
+package app.validation;
+
+import app.dto.UsuarioRequestDTO;
+import org.springframework.stereotype.Component;
+
+@Component
+public class SenhaForteValidator implements UsuarioValidator {
+
+    @Override
+    public void validar(UsuarioRequestDTO dto) {
+        String senha = dto.getSenha();
+
+        if (senha == null || senha.isBlank()) {
+            throw new RuntimeException("Senha é obrigatória");
+        }
+
+        if (senha.length() < 8) {
+            throw new RuntimeException("Senha deve ter pelo menos 8 caracteres");
+        }
+
+        if (!senha.matches(".*[A-Z].*")) {
+            throw new RuntimeException("Senha deve conter pelo menos uma letra maiúscula");
+        }
+
+        if (!senha.matches(".*[a-z].*")) {
+            throw new RuntimeException("Senha deve conter pelo menos uma letra minúscula");
+        }
+
+        if (!senha.matches(".*\\d.*")) {
+            throw new RuntimeException("Senha deve conter pelo menos um número");
+        }
+
+        if (!senha.matches(".*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>/?].*")) {
+            throw new RuntimeException("Senha deve conter pelo menos um caractere especial");
+        }
+    }
+}

@@ -2,8 +2,11 @@ package app.service;
 
 import app.dto.UsuarioRequestDTO;
 import app.dto.UsuarioResponseDTO;
+import app.mapper.UsuarioMapper;
 import app.model.Usuario;
 import app.repository.UsuarioRepository;
+import app.validation.UsuarioUpdateValidator;
+import app.validation.UsuarioValidator;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,41 +16,33 @@ import java.util.stream.Collectors;
 public class UsuarioService {
 
     private final UsuarioRepository repository;
+    private final UsuarioMapper mapper;
+    private final List<UsuarioValidator> validators;
+    private final List<UsuarioUpdateValidator> updateValidators;
 
-    public UsuarioService(UsuarioRepository repository) {
+    public UsuarioService(UsuarioRepository repository,
+                          UsuarioMapper mapper,
+                          List<UsuarioValidator> validators,
+                          List<UsuarioUpdateValidator> updateValidators) {
         this.repository = repository;
+        this.mapper = mapper;
+        this.validators = validators;
+        this.updateValidators = updateValidators;
     }
 
     public UsuarioResponseDTO cadastrar(UsuarioRequestDTO dto) {
-        if (repository.existsByEmail(dto.getEmail())) {
-            throw new RuntimeException("Email já cadastrado");
-        }
+        validators.forEach(v -> v.validar(dto));
 
-        Usuario usuario = new Usuario();
-        usuario.setNome(dto.getNome());
-        usuario.setEmail(dto.getEmail());
-        usuario.setNumero(dto.getNumero());
-        usuario.setSenha(dto.getSenha());
-
+        Usuario usuario = mapper.toEntity(dto);
         Usuario salvo = repository.save(usuario);
 
-        return new UsuarioResponseDTO(
-                salvo.getId(),
-                salvo.getNome(),
-                salvo.getEmail(),
-                salvo.getNumero()
-        );
+        return mapper.toResponseDTO(salvo);
     }
 
     public List<UsuarioResponseDTO> listar() {
         return repository.findAll()
                 .stream()
-                .map(usuario -> new UsuarioResponseDTO(
-                        usuario.getId(),
-                        usuario.getNome(),
-                        usuario.getEmail(),
-                        usuario.getNumero()
-                ))
+                .map(mapper::toResponseDTO)
                 .collect(Collectors.toList());
     }
 
@@ -58,12 +53,7 @@ public class UsuarioService {
             return null;
         }
 
-        return new UsuarioResponseDTO(
-                usuario.getId(),
-                usuario.getNome(),
-                usuario.getEmail(),
-                usuario.getNumero()
-        );
+        return mapper.toResponseDTO(usuario);
     }
 
     public UsuarioResponseDTO atualizar(Long id, UsuarioRequestDTO dto) {
@@ -73,9 +63,7 @@ public class UsuarioService {
             return null;
         }
 
-        if (!usuario.getEmail().equals(dto.getEmail()) && repository.existsByEmail(dto.getEmail())) {
-            throw new RuntimeException("Email já cadastrado");
-        }
+        updateValidators.forEach(v -> v.validar(usuario, dto));
 
         usuario.setNome(dto.getNome());
         usuario.setEmail(dto.getEmail());
@@ -84,12 +72,7 @@ public class UsuarioService {
 
         Usuario atualizado = repository.save(usuario);
 
-        return new UsuarioResponseDTO(
-                atualizado.getId(),
-                atualizado.getNome(),
-                atualizado.getEmail(),
-                atualizado.getNumero()
-        );
+        return mapper.toResponseDTO(atualizado);
     }
 
     public void deletar(Long id) {
