@@ -34,8 +34,7 @@ Repository
 ↓
 Database
 
-
-Estrutura de pacotes:
+## 📂 Estrutura de pacotes
 
 app
 ├── controller
@@ -165,31 +164,31 @@ Exemplo:
 Deletar usuário: DELETE /usuarios/{id}
 
 --------------------------------------
-📂 Estrutura do projeto: 
+## 📂 Estrutura do projeto
 
 Bootcamp_java_deloitte
- ├── src
- │   ├── main
- │   │   └── java/app
- │   │       ├── controller
- │   │       ├── dto
- │   │       ├── exception
- │   │       ├── mapper
- │   │       ├── model
- │   │       ├── repository
- │   │       ├── service
- │   │       └── validation
- │   │
- │   └── test
- │       └── java/app
- │           ├── controller
- │           ├── mapper
- │           ├── repository
- │           ├── service
- │           └── validation
- │
- ├── pom.xml
- └── README.md
+├── src
+│ ├── main
+│ │ └── java/app
+│ │ ├── controller
+│ │ ├── dto
+│ │ ├── exception
+│ │ ├── mapper
+│ │ ├── model
+│ │ ├── repository
+│ │ ├── service
+│ │ └── validation
+│ │
+│ └── test
+│ └── java/app
+│ ├── controller
+│ ├── mapper
+│ ├── repository
+│ ├── service
+│ └── validation
+│
+├── pom.xml
+└── README.md
 
 
 
