@@ -5,28 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="469cc10d-2196-40e4-929b-8e6ccab7bbd5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/mapper/UsuarioMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/validation/EmailDuplicadoUpdateValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/validation/EmailDuplicadoValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/validation/NumeroUpdateValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/validation/NumeroValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/validation/SenhaForteUpdateValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/validation/SenhaForteValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/validation/UsuarioUpdateValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/validation/UsuarioValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/controller/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/controller/UsuarioViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/usuarios/detalhes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/usuarios/erro.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/usuarios/form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/usuarios/lista.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/usuarios-db.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/usuarios-db.mv.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/dto/UsuarioRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/dto/UsuarioRequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/repository/UsuarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/repository/UsuarioRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/mapper/UsuarioMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/mapper/UsuarioMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/service/UsuarioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/validation/SenhaForteUpdateValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/validation/SenhaForteUpdateValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/dto/UsuarioRequestDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/dto/UsuarioRequestDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/exception/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/exception/GlobalExceptionHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/service/UsuarioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/service/UsuarioService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/app/controller/UsuarioControllerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/app/repository/UsuarioRepositoryTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/app/service/UsuarioServiceTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +31,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -51,25 +46,26 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JUnit.All in usuarios.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.java in usuarios.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;Spring Boot.Application.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JUnit.All in usuarios.executor": "Run",
+    "JUnit.java in usuarios.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.Application.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Spring Boot.Application">
     <configuration name="All in usuarios" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="usuarios" />

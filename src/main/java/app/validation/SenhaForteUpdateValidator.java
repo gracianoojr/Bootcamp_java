@@ -12,7 +12,7 @@ public class SenhaForteUpdateValidator implements UsuarioUpdateValidator {
         String senha = dto.getSenha();
 
         if (senha == null || senha.isBlank()) {
-            throw new RuntimeException("Senha é obrigatória");
+            return;
         }
 
         if (senha.length() < 8) {

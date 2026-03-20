@@ -2,20 +2,20 @@ package app.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 public class UsuarioRequestDTO {
 
     @NotBlank(message = "Nome é obrigatório")
     private String nome;
 
-    @Email(message = "Email inválido")
     @NotBlank(message = "Email é obrigatório")
+    @Email(message = "Email inválido")
     private String email;
 
     @NotBlank(message = "Número é obrigatório")
     private String numero;
 
-    @NotBlank(message = "Senha é obrigatória")
     private String senha;
 
     public UsuarioRequestDTO() {
@@ -36,7 +36,6 @@ public class UsuarioRequestDTO {
         this.nome = nome;
     }
 
-
     public String getEmail() {
         return email;
     }
@@ -45,7 +44,6 @@ public class UsuarioRequestDTO {
         this.email = email;
     }
 
-
     public String getNumero() {
         return numero;
     }
@@ -53,7 +51,6 @@ public class UsuarioRequestDTO {
     public void setNumero(String numero) {
         this.numero = numero;
     }
-
 
     public String getSenha() {
         return senha;

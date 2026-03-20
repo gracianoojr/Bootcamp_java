@@ -68,7 +68,10 @@ public class UsuarioService {
         usuario.setNome(dto.getNome());
         usuario.setEmail(dto.getEmail());
         usuario.setNumero(dto.getNumero());
-        usuario.setSenha(dto.getSenha());
+
+        if (dto.getSenha() != null && !dto.getSenha().isBlank()) {
+            usuario.setSenha(dto.getSenha());
+        }
 
         Usuario atualizado = repository.save(usuario);
 
